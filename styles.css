@@ -142,3 +142,167 @@ a{color:var(--fg);text-decoration:none}
   }
   .hero .actions{ margin-top:12px; }
 }
+
+
+/* —— PAGE CANDIDATURE —— */
+
+.apply-hero { text-align:center; padding-top:36px; padding-bottom:10px; }
+.apply-hero .lead { color:#cfd3d8; margin-top:6px; }
+.pills.center{ justify-content:center; display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.pills.center li{ list-style:none; border:1px solid #141414; padding:8px 12px; border-radius:999px; color:#d0d4da; background:linear-gradient(180deg,#0f0f0f,#0a0a0a) }
+
+.form-card{
+  max-width:760px; margin:16px auto 32px; padding:22px;
+  background:linear-gradient(180deg,#0e0e0e,#090909);
+  border:1px solid #141414; border-radius:16px;
+  box-shadow:0 0 40px rgba(0,207,255,.06);
+}
+.form-card .grid{ display:grid; gap:14px; }
+.field{ display:block; }
+.field > span{ display:block; font-weight:600; margin-bottom:6px; }
+.field .hint{ display:block; font-style:normal; font-size:12px; color:#9aa0a6; margin-top:4px; }
+.field input, .field textarea{
+  width:100%; padding:14px 14px; border-radius:12px; border:1px solid #1b1b1b;
+  background:#0b0b0b; color:#fff; outline:none;
+}
+.field input:focus, .field textarea:focus{ border-color:#184a55; box-shadow:0 0 0 4px rgba(0,207,255,.08); }
+.checks{ display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; }
+.checks label{ display:flex; gap:8px; align-items:center; font-size:14px; color:#d0d4da; }
+.success{ text-align:center; padding:22px 10px; }
+.success .icon{ font-size:40px; margin-bottom:6px; }
+.hidden{ display:none; }
+.muted{ color:#a9adb2; }
+.full{ width:100%; }
+
+@media (max-width:900px){
+  .form-card{ margin:10px 0 24px; border-radius:14px; }
+  .checks{ grid-template-columns:1fr; }
+}
+
+/* —— Candidature V2 —— */
+
+/* Hero plus “pro” */
+.apply-hero { text-align:center; padding-top:40px; padding-bottom:12px; }
+.apply-hero h1{ font-size:42px; line-height:1.08; font-weight:800; letter-spacing:-.01em; margin:8px 0 8px; }
+.apply-hero .kpi{ font-size:18px; color:#d6dbe0; margin:4px 0 10px; }
+.apply-hero .divider{
+  width:min(560px,90%); height:1px; margin:8px auto 12px;
+  background: linear-gradient(90deg, rgba(0,207,255,0) 0%, rgba(0,207,255,.35) 50%, rgba(0,207,255,0) 100%);
+  box-shadow: 0 0 18px rgba(0,207,255,.25);
+}
+.pills.center.tight{ justify-content:center; display:flex; gap:10px; flex-wrap:wrap; }
+.pills.center.tight li{ list-style:none; border:1px solid #141414; padding:8px 12px; border-radius:999px; color:#d0d4da; background:linear-gradient(180deg,#0f0f0f,#0a0a0a) }
+
+/* Card “Sparks” */
+.form-card{
+  max-width:760px; margin:18px auto 34px; padding:22px;
+  background:radial-gradient(60% 100% at 50% 0%, rgba(0,207,255,.05), rgba(0,207,255,0) 60%),
+             linear-gradient(180deg,#0e0e0e,#090909);
+  border:1px solid #133642; border-radius:18px;
+  box-shadow:0 0 60px rgba(0,207,255,.08), inset 0 0 40px rgba(0,207,255,.05);
+}
+.form-card .grid{ display:grid; gap:16px; }
+.field > span{ display:block; font-weight:600; margin-bottom:6px; }
+.field .hint{ display:block; font-size:12px; color:#9aa0a6; margin-top:4px; }
+.field input, .field textarea{
+  width:100%; padding:14px 14px; border-radius:12px; border:1px solid #1b1b1b;
+  background:#0b0b0b; color:#fff; outline:none; transition:border .15s, box-shadow .15s;
+}
+.field input:focus, .field textarea:focus{
+  border-color:#1e5360; box-shadow:0 0 0 4px rgba(0,207,255,.09);
+}
+
+/* Niche clean (pas de bordure fieldset, grille ordonnée) */
+.niche-group{ border:none; padding:0; margin:0; }
+.checks{ display:grid; grid-template-columns:1fr 1fr; gap:10px 18px; align-items:center; }
+.checks label{ display:flex; gap:10px; align-items:center; font-size:14px; color:#d0d4da; }
+.other-input{ display:none; margin-top:6px; }
+
+/* Bouton */
+.btn.full{ width:100%; }
+.btn.xl{ padding:18px 24px; font-size:18px; }
+
+/* Success pro */
+.success{ text-align:center; padding:26px 10px; }
+.success-badge{
+  width:72px; height:72px; margin:0 auto 10px;
+  border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(0,207,255,.35), rgba(0,207,255,.12));
+  border:1px solid #154b57; display:grid; place-items:center; box-shadow:0 0 30px rgba(0,207,255,.25);
+}
+.success-badge .tick{ font-size:34px; color:#fff; font-weight:800; }
+.success h3{ font-size:26px; margin:8px 0 6px; }
+.success .actions{ margin-top:8px; }
+
+/* Mobile */
+@media (max-width:900px){
+  .apply-hero h1{ font-size:34px; }
+  .form-card{ border-radius:16px; margin:12px 0 28px; }
+  .checks{ grid-template-columns:1fr; }
+}
+
+/* Niche clean + lisible mobile */
+.niche-group{ border:none; padding:0; margin:0; }
+.niche-group > .hint{ margin:4px 0 10px; color:#9aa0a6; }
+
+.checks{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px 18px;
+}
+.chk{
+  display:flex; align-items:center; gap:12px;
+  padding:10px 12px; border-radius:10px; background:#0b0b0b; border:1px solid #171717;
+}
+.chk span{
+  flex:1; color:#e7ebef; line-height:1.2; /* texte avant la case */
+}
+.chk input[type="checkbox"]{
+  width:22px; height:22px; min-width:22px; min-height:22px; border-radius:6px;
+}
+
+.other-input{ display:none; margin-top:6px; }
+
+.error{ color:#ff8a8a; }
+.hidden{ display:none; }
+
+@media (max-width:900px){
+  .checks{ grid-template-columns:1fr; }
+  .chk{ gap:10px; padding:12px; }
+  .chk span{ font-size:15px; }
+}
+
+/* CHECKBOXES SPARKS — petites, arrondies, bleues, tick custom */
+.chk input[type="checkbox"]{
+  -webkit-appearance:none; appearance:none;
+  width:18px; height:18px; min-width:18px; min-height:18px;
+  border-radius:6px;
+  border:1.5px solid #1e5360;          /* bord teal discret */
+  background:#0b0b0b;                   /* fond sombre */
+  display:grid; place-content:center;
+  transition:background-color .15s,border-color .15s,box-shadow .15s,transform .08s;
+  accent-color:#00CFFF;                 /* fallback navigateurs modernes */
+}
+@media (min-width:900px){
+  .chk input[type="checkbox"]{ width:20px; height:20px; }
+}
+.chk input[type="checkbox"]:hover{ border-color:#1f5c6a; }
+.chk input[type="checkbox"]:focus{ outline:none; box-shadow:0 0 0 4px rgba(0,207,255,.12); }
+
+.chk input[type="checkbox"]:checked{
+  background:#00CFFF;                   /* bleu Sparks */
+  border-color:#00CFFF;
+}
+.chk input[type="checkbox"]:checked::after{
+  content:"";
+  width:18px; height:18px;
+  background:#001014;                   /* tick sombre lisible sur bleu */
+  /* petit check SVG en mask (compatible iOS) */
+  -webkit-mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'>\
+  <path d='M5.2 10.2L2.3 7.3l-1.4 1.4 4.3 4.3L13 5.2 11.6 3.8z' fill='%23000'/></svg>") no-repeat center/contain;
+          mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'>\
+  <path d='M5.2 10.2L2.3 7.3l-1.4 1.4 4.3 4.3L13 5.2 11.6 3.8z' fill='%23000'/></svg>") no-repeat center/contain;
+}
+
+.chk{ display:flex; align-items:center; gap:10px; padding:10px 12px;
+      background:#0b0b0b; border:1px solid #171717; border-radius:10px; }
+.chk span{ flex:1; color:#e7ebef; line-height:1.2; }
