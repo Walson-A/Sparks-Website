@@ -44,7 +44,7 @@
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
         <form id="sparksForm"
-              action="REPLACE_WITH_GOOGLE_FORM_formResponse_URL"
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdIiZIyXBgiS6tc2tfMB-w9i8WJagUJVwmWEXd9BAqpr1TruA/formResponse"
               method="POST"
               target="hidden_iframe"
               onsubmit="return handleSubmit(event)">
@@ -52,18 +52,18 @@
           <div class="grid">
             <label class="field">
               <span>Email*</span>
-              <input type="email" name="entry.EMAIL_ID" required placeholder="ex. nom@mail.com">
+              <input type="email" name="entry.1781973483" required placeholder="ex. nom@mail.com">
               <em class="hint">On t’écrira ici pour les missions.</em>
             </label>
 
             <label class="field">
               <span>Instagram*</span>
-              <input type="text" name="entry.INSTA_ID" required placeholder="@username">
+              <input type="text" name="entry.238135763" required placeholder="@username">
             </label>
 
             <label class="field">
               <span>TikTok (optionnel)</span>
-              <input type="text" name="entry.TIKTOK_ID" placeholder="@username">
+              <input type="text" name="entry.1185270065" placeholder="@username">
             </label>
 
             <fieldset class="field niche-group">
@@ -72,31 +72,31 @@
 
                 <div class="checks" id="nicheChecks">
                     <label class="chk"><span>Beauté / Cosmétique</span>
-                    <input type="checkbox" name="entry.NICHE_ID" value="Beauté / Cosmétique" required>
+                    <input type="checkbox" name="entry.1148784650" value="Beauté / Cosmétique">
                     </label>
 
                     <label class="chk"><span>Mode / Lifestyle</span>
-                    <input type="checkbox" name="entry.NICHE_ID" value="Mode / Lifestyle">
+                    <input type="checkbox" name="entry.1148784650" value="Mode / Lifestyle">
                     </label>
 
                     <label class="chk"><span>Food / Restauration</span>
-                    <input type="checkbox" name="entry.NICHE_ID" value="Food / Restauration">
+                    <input type="checkbox" name="entry.1148784650" value="Food / Restauration">
                     </label>
 
                     <label class="chk"><span>Tech / Gaming</span>
-                    <input type="checkbox" name="entry.NICHE_ID" value="Tech / Gaming">
+                    <input type="checkbox" name="entry.1148784650" value="Tech / Gaming">
                     </label>
 
                     <label class="chk"><span>Humour / Divertissement</span>
-                    <input type="checkbox" name="entry.NICHE_ID" value="Humour / Divertissement">
+                    <input type="checkbox" name="entry.1148784650" value="Humour / Divertissement">
                     </label>
 
                     <!-- Autre + précision -->
                     <label class="chk"><span>Autre</span>
-                    <input id="niche-other" type="checkbox" name="entry.NICHE_ID" value="Autre">
+                    <input id="niche-other" type="checkbox" name="entry.1148784650" value="Autre">
                     </label>
                     <input id="niche-other-text" class="other-input" type="text"
-                        name="entry.NICHE_OTHER_ID" placeholder="Précise ta niche (ex. voyage, sport…)">
+                        name="entry.1316781156" placeholder="Précise ta niche (ex. voyage, sport…)">
                 </div>
 
                 <div id="niche-limit" class="hint error hidden">Tu peux sélectionner jusqu'à 2 niches maximum.</div>
@@ -104,12 +104,12 @@
 
             <label class="field">
               <span>Ville / Région (optionnel)</span>
-              <input type="text" name="entry.VILLE_ID" placeholder="ex. Paris / Île-de-France">
+              <input type="text" name="entry.471832489" placeholder="ex. Paris / Île-de-France">
             </label>
 
             <label class="field">
               <span>Liens de vidéos (1–3, optionnel)</span>
-              <textarea name="entry.LINKS_ID" rows="3" placeholder="Colle 1 à 3 URLs (TikTok, Reels…)"></textarea>
+              <textarea name="entry.1661834335" rows="3" placeholder="Colle 1 à 3 URLs (TikTok, Reels…)"></textarea>
             </label>
           </div>
 
@@ -151,10 +151,9 @@
       window.location.href = 'index.html#top';
     });
 
-    // Toggle champ "Autre"
-  // --- Niche: max 2 sélectionnées + champ "Autre" ---
-  const checksWrap = document.getElementById('nicheChecks');
-  const limitNote  = document.getElementById('niche-limit');
+      const checksWrap = document.getElementById('nicheChecks');
+  const noteMin    = document.getElementById('niche-min');
+  const noteMax    = document.getElementById('niche-limit');
   const otherBox   = document.getElementById('niche-other');
   const otherInput = document.getElementById('niche-other-text');
 
@@ -165,38 +164,39 @@
     if (!on) otherInput.value = '';
   }
 
-  function enforceMaxTwo(e){
-    const boxes = checksWrap.querySelectorAll('input[type="checkbox"]');
-    const checked = Array.from(boxes).filter(b => b.checked);
-    if (checked.length > 2){
-      // empêche de dépasser 2
-      e.target.checked = false;
-      limitNote.classList.remove('hidden');
-      setTimeout(()=>limitNote.classList.add('hidden'), 1800);
-    }
+  function countChecked(){
+    return checksWrap ? checksWrap.querySelectorAll('input[type="checkbox"]:checked').length : 0;
   }
 
   if (checksWrap){
     checksWrap.addEventListener('change', (e)=>{
-      if (e.target.matches('input[type="checkbox"]')) {
-        enforceMaxTwo(e);
-        if (e.target === otherBox) syncOther();
+      if (!e.target.matches('input[type="checkbox"]')) return;
+      // max 2
+      if (countChecked() > 2){ e.target.checked = false; noteMax.classList.remove('hidden');
+        setTimeout(()=>noteMax.classList.add('hidden'), 1600);
       }
+      // toggle "Autre"
+      if (e.target === otherBox) syncOther();
     });
     syncOther();
   }
 
-    // Submit UX
-    function handleSubmit(e){
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true; btn.textContent = 'Envoi…';
-      setTimeout(()=>{
-        document.getElementById('sparksForm').classList.add('hidden');
-        document.getElementById('success').classList.remove('hidden');
-        window.scrollTo({ top: document.getElementById('form-card').offsetTop - 80, behavior: 'smooth' });
-      }, 900);
-      return true;
+  // Empêche l’envoi si 0 niche
+  function handleSubmit(e){
+    const btn = document.getElementById('submitBtn');
+    if (countChecked() === 0){
+      noteMin.classList.remove('hidden');
+      setTimeout(()=>noteMin.classList.add('hidden'), 1800);
+      e.preventDefault(); return false;
     }
+    btn.disabled = true; btn.textContent = 'Envoi…';
+    setTimeout(()=>{
+      document.getElementById('sparksForm').classList.add('hidden');
+      document.getElementById('success').classList.remove('hidden');
+      window.scrollTo({ top: document.getElementById('form-card').offsetTop - 80, behavior: 'smooth' });
+    }, 900);
+    return true;
+  }
   </script>
 </body>
 </html>
