@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join SPARKS Society — Collabore avec des marques, sois payé</title>
+  <meta name="description" content="SPARKS Society — le studio des créateurs TikTok qui collaborent avec les marques. Rejoins le roster, crée des vidéos, sois payé rapidement.">
+  <meta name="theme-color" content="#00CFFF" />
+  <link rel="icon" type="image/png" href="assets/logo_ring.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+  <!-- ancre top avec marge de scroll -->
+  <div id="top" class="anchor-target"></div>
+
+  <header class="container header">
+    <a class="brand" href="#top" aria-label="Accueil SPARKS">
+      <!-- Icône S (plus visible) -->
+      <img src="assets/logo_ring.png" alt="SPARKS" class="brandmark sicon" />
+    </a>
+    <nav class="nav">
+      <a href="#why">Avantages</a>
+      <a href="#how">Process</a>
+      <a href="#apply" class="cta">Postuler</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO = plein écran, boutons en bas -->
+    <section class="hero container">
+      <div class="copy">
+        <div class="over big">SPARKS</div>
+        <h1>Rejoins la <span class="accent">SPARKS Society</span> <span class="spark">✦</span></h1>
+        <p>Collabore avec des marques. Crée du contenu. <strong>Sois payé.</strong></p>
+      </div>
+
+      <!-- Illustration spark (remplaçable plus tard par une image) -->
+      <img class="hero-art" src="assets/hero.jpg" alt="Créateurs SPARKS" aria-hidden="true">
+      </img>
+
+      <div class="actions">
+        <a class="btn primary xxl" href="#apply">Postuler maintenant</a>
+        <a class="btn ghost xxl" href="https://instagram.com/joinsparks.fr" target="_blank" rel="noopener">Voir Instagram</a>
+      </div>
+    </section>
+
+    <section id="why" class="why container anchor-target">
+      <h2>Pourquoi rejoindre <span class="accent">SPARKS</span> ?</h2>
+      <div class="grid3">
+        <div class="card">
+          <div class="icon">💸</div>
+          <h3>Missions payées</h3>
+          <p>Des briefs clairs, un cadre pro, des paiements rapides (≤72h après validation).</p>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Produits offerts</h3>
+          <p>Beauté, mode, tech, food, lifestyle — reçois les produits chez toi pour créer.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🚀</div>
+          <h3>Zéro prospection</h3>
+          <p>On apporte les marques, tu te concentres sur la création. Simple et clean.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how container anchor-target">
+      <h2>Comment ça marche</h2>
+      <div class="steps4">
+        <div class="step"><span>1</span> Tu postules (60s)</div>
+        <div class="step"><span>2</span> On t’ajoute au roster</div>
+        <div class="step"><span>3</span> Tu reçois des missions</div>
+        <div class="step"><span>4</span> Tu crées → on valide → <strong>paiement</strong></div>
+      </div>
+      <p class="note">Pas de frais d’entrée. Contrat clair. Respect des créateurs.</p>
+    </section>
+
+    <section id="apply" class="apply container anchor-target">
+      <div class="cta-box">
+        <h2>Prêt à rejoindre la <span class="accent">SPARKS Society</span> ?</h2>
+        <p class="lead">Candidature gratuite, rapide (60 secondes).</p>
+        <!-- Remplace par ton Google Form dès que tu l’as -->
+        <a class="btn primary xxl"
+           href="mailto:creators@joinsparks.fr?subject=Candidature%20SPARKS%20Society&body=Nom%20%3A%0AInstagram%20%3A%0ATikTok%20%3A%0ANiche%20%3A%20Beaut%C3%A9%2FMode%2FTech%2FFood%2FLifestyle%0AExemples%20de%20vid%C3%A9os%20%3A%0AVille%20%3A%0A">
+           Postuler maintenant</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="left">
+      <img src="assets/logo_ring.png" alt="SPARKS" class="favicon" />
+      <span>© 2025 SPARKS Society</span>
+    </div>
+    <div class="right">
+      <a href="https://instagram.com/joinsparks.fr" target="_blank" rel="noopener">@joinsparks.fr</a>
+    </div>
+  </footer>
+
+  <script>
+    // Clique sur le logo = scroll tout en haut (au-delà de l’ancre)
+    document.querySelector('.brand').addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey) return;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
