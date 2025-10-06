@@ -1,18 +1,25 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join SPARKS Society — Collabore avec des marques, sois payé</title>
-  <meta name="description" content="SPARKS Society — le studio des créateurs TikTok qui collaborent avec les marques. Rejoins le roster, crée des vidéos, sois payé rapidement.">
+  <meta name="description"
+    content="SPARKS Society — le studio des créateurs TikTok qui collaborent avec les marques. Rejoins le roster, crée des vidéos, sois payé rapidement.">
   <meta name="theme-color" content="#00CFFF" />
-  <link rel="icon" type="image/png" href="assets/logo_ring.png" />
+  <link rel="icon" type="image/png" href="assets/logo_ring_nobg.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <style>html{scroll-behavior:smooth}</style>
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
 </head>
+
 <body>
   <!-- ancre top avec marge de scroll -->
   <div id="top" class="anchor-target"></div>
@@ -44,7 +51,8 @@
 
       <div class="actions">
         <a class="btn primary xxl" href="form.html">Postuler maintenant</a>
-        <a class="btn ghost xxl" href="https://instagram.com/joinsparks.fr" target="_blank" rel="noopener">Voir Instagram</a>
+        <a class="btn ghost xxl" href="https://instagram.com/joinsparks.fr" target="_blank" rel="noopener">Voir
+          Instagram</a>
       </div>
     </section>
 
@@ -75,9 +83,9 @@
         <div class="step"><span>1</span> Tu postules (60s)</div>
         <div class="step"><span>2</span> On t’ajoute au roster</div>
         <div class="step"><span>3</span> Tu reçois des missions</div>
-        <div class="step"><span>4</span> Tu crées → on valide → <strong>paiement</strong></div>
+        <div class="step"><span>4</span> T'es payé 🤑</div>
       </div>
-      <p class="note">Pas de frais d’entrée. Contrat clair. Respect des créateurs.</p>
+      <p class="note">0 frais d'entrée. Contrat clair. Respect des créateurs.</p>
     </section>
 
     <section id="apply" class="apply container anchor-target">
@@ -85,16 +93,15 @@
         <h2>Prêt à rejoindre la <span class="accent">SPARKS Society</span> ?</h2>
         <p class="lead">Candidature gratuite, rapide (60 secondes).</p>
         <!-- Remplace par ton Google Form dès que tu l’as -->
-        <a class="btn primary xxl"
-           href="form.html">
-           Postuler maintenant</a>
+        <a class="btn primary xxl" href="form.html">
+          Postuler maintenant</a>
       </div>
     </section>
   </main>
 
   <footer class="footer container">
     <div class="left">
-      <img src="assets/logo_ring.png" alt="SPARKS" class="favicon" />
+      <img src="assets/logo_ring_nobg.png" alt="SPARKS" class="favicon" />
       <span>© 2025 SPARKS Society</span>
     </div>
     <div class="right">
@@ -104,11 +111,13 @@
 
   <script>
     // Clique sur le logo = scroll tout en haut (au-delà de l’ancre)
-    document.querySelector('.brand').addEventListener('click', (e) => {
+    document.querySelector('.brand').addEventListener('click', (e) =>
+    {
       if (e.metaKey || e.ctrlKey) return;
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
+
 </html>

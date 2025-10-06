@@ -1,19 +1,25 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Candidature — SPARKS Society</title>
   <meta name="theme-color" content="#00CFFF" />
-  <link rel="icon" type="image/png" href="assets/logo_ring.png" />
+  <link rel="icon" type="image/png" href="assets/logo_ring_nobg.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <style>html{scroll-behavior:smooth}</style>
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
 </head>
+
 <body>
   <header class="container header">
     <a class="brand" href="index.html" aria-label="Retour accueil">
-      <img src="assets/logo_ring.png" class="brandmark sicon" alt="SPARKS">
+      <img src="assets/logo_ring_nobg.png" class="brandmark sicon" alt="SPARKS">
     </a>
     <nav class="nav">
       <a href="index.html#why">Avantages</a>
@@ -44,10 +50,8 @@
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
         <form id="sparksForm"
-              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdIiZIyXBgiS6tc2tfMB-w9i8WJagUJVwmWEXd9BAqpr1TruA/formResponse"
-              method="POST"
-              target="hidden_iframe"
-              onsubmit="return handleSubmit(event)">
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdIiZIyXBgiS6tc2tfMB-w9i8WJagUJVwmWEXd9BAqpr1TruA/formResponse"
+          method="POST" target="hidden_iframe" onsubmit="return handleSubmit(event)">
 
           <div class="grid">
             <label class="field">
@@ -67,40 +71,48 @@
             </label>
 
             <fieldset class="field niche-group">
-                <span>Niche / Contenu principal*</span>
-                <em class="hint">Ça nous aide à te proposer des marques qui correspondent vraiment à ton contenu.</em>
+              <span>Niche / Contenu principal*</span>
+              <em class="hint">Ça nous aide à te proposer des marques qui correspondent vraiment à ton contenu.</em>
 
-                <div class="checks" id="nicheChecks">
-                    <label class="chk"><span>Beauté / Cosmétique</span>
-                    <input type="checkbox" name="entry.1148784650" value="Beauté / Cosmétique">
-                    </label>
+              <div class="checks" id="nicheChecks">
+                <label class="chk"><span>Beauté / Cosmétique</span>
+                  <input type="checkbox" name="entry.1148784650" value="Beauté / Cosmétique">
+                </label>
 
-                    <label class="chk"><span>Mode / Lifestyle</span>
-                    <input type="checkbox" name="entry.1148784650" value="Mode / Lifestyle">
-                    </label>
+                <label class="chk"><span>Mode / Lifestyle</span>
+                  <input type="checkbox" name="entry.1148784650" value="Mode / Lifestyle">
+                </label>
 
-                    <label class="chk"><span>Food / Restauration</span>
-                    <input type="checkbox" name="entry.1148784650" value="Food / Restauration">
-                    </label>
+                <label class="chk"><span>Food / Restauration</span>
+                  <input type="checkbox" name="entry.1148784650" value="Food / Restauration">
+                </label>
 
-                    <label class="chk"><span>Tech / Gaming</span>
-                    <input type="checkbox" name="entry.1148784650" value="Tech / Gaming">
-                    </label>
+                <label class="chk"><span>Tech / Gaming</span>
+                  <input type="checkbox" name="entry.1148784650" value="Tech / Gaming">
+                </label>
 
-                    <label class="chk"><span>Humour / Divertissement</span>
-                    <input type="checkbox" name="entry.1148784650" value="Humour / Divertissement">
-                    </label>
+                <label class="chk"><span>Humour / Divertissement</span>
+                  <input type="checkbox" name="entry.1148784650" value="Humour / Divertissement">
+                </label>
 
-                    <!-- Autre + précision -->
-                    <label class="chk"><span>Autre</span>
-                    <input id="niche-other" type="checkbox" name="entry.1148784650" value="Autre">
-                    </label>
-                    <input id="niche-other-text" class="other-input" type="text"
-                        name="entry.1316781156" placeholder="Précise ta niche (ex. voyage, sport…)">
-                </div>
+                <label class="chk"><span>Art / Culture</span>
+                  <input type="checkbox" name="entry.1148784650" value="Art / Culture">
+                </label>
 
-                <div id="niche-limit" class="hint error hidden">Tu peux sélectionner jusqu'à 2 niches maximum.</div>
-                </fieldset>
+                <label class="chk"><span>Sport / Bien-être</span>
+                  <input type="checkbox" name="entry.1148784650" value="Sport / Bien-être">
+                </label>
+
+                <!-- Autre + précision -->
+                <label class="chk"><span>Autre</span>
+                  <input id="niche-other" type="checkbox" name="entry.1148784650" value="Autre">
+                </label>
+                <input id="niche-other-text" class="other-input" type="text" name="entry.1316781156"
+                  placeholder="Précise ta niche (ex. voyage, sport…)">
+              </div>
+
+              <div id="niche-limit" class="hint error hidden">Tu peux sélectionner jusqu'à 2 niches maximum.</div>
+            </fieldset>
 
             <label class="field">
               <span>Ville / Région (optionnel)</span>
@@ -135,7 +147,7 @@
 
   <footer class="footer container">
     <div class="left">
-      <img src="assets/logo_ring.png" alt="SPARKS" class="favicon" />
+      <img src="assets/logo_ring_nobg.png" alt="SPARKS" class="favicon" />
       <span>© 2025 SPARKS Society</span>
     </div>
     <div class="right">
@@ -145,58 +157,69 @@
 
   <script>
     // Logo -> retour accueil
-    document.querySelector('.brand').addEventListener('click', (e) => {
+    document.querySelector('.brand').addEventListener('click', (e) =>
+    {
       if (e.metaKey || e.ctrlKey) return;
       e.preventDefault();
       window.location.href = 'index.html#top';
     });
 
-      const checksWrap = document.getElementById('nicheChecks');
-  const noteMin    = document.getElementById('niche-min');
-  const noteMax    = document.getElementById('niche-limit');
-  const otherBox   = document.getElementById('niche-other');
-  const otherInput = document.getElementById('niche-other-text');
+    const checksWrap = document.getElementById('nicheChecks');
+    const noteMin = document.getElementById('niche-min');
+    const noteMax = document.getElementById('niche-limit');
+    const otherBox = document.getElementById('niche-other');
+    const otherInput = document.getElementById('niche-other-text');
 
-  function syncOther(){
-    if (!otherBox) return;
-    const on = otherBox.checked;
-    otherInput.style.display = on ? 'block' : 'none';
-    if (!on) otherInput.value = '';
-  }
-
-  function countChecked(){
-    return checksWrap ? checksWrap.querySelectorAll('input[type="checkbox"]:checked').length : 0;
-  }
-
-  if (checksWrap){
-    checksWrap.addEventListener('change', (e)=>{
-      if (!e.target.matches('input[type="checkbox"]')) return;
-      // max 2
-      if (countChecked() > 2){ e.target.checked = false; noteMax.classList.remove('hidden');
-        setTimeout(()=>noteMax.classList.add('hidden'), 1600);
-      }
-      // toggle "Autre"
-      if (e.target === otherBox) syncOther();
-    });
-    syncOther();
-  }
-
-  // Empêche l’envoi si 0 niche
-  function handleSubmit(e){
-    const btn = document.getElementById('submitBtn');
-    if (countChecked() === 0){
-      noteMin.classList.remove('hidden');
-      setTimeout(()=>noteMin.classList.add('hidden'), 1800);
-      e.preventDefault(); return false;
+    function syncOther()
+    {
+      if (!otherBox) return;
+      const on = otherBox.checked;
+      otherInput.style.display = on ? 'block' : 'none';
+      if (!on) otherInput.value = '';
     }
-    btn.disabled = true; btn.textContent = 'Envoi…';
-    setTimeout(()=>{
-      document.getElementById('sparksForm').classList.add('hidden');
-      document.getElementById('success').classList.remove('hidden');
-      window.scrollTo({ top: document.getElementById('form-card').offsetTop - 80, behavior: 'smooth' });
-    }, 900);
-    return true;
-  }
+
+    function countChecked()
+    {
+      return checksWrap ? checksWrap.querySelectorAll('input[type="checkbox"]:checked').length : 0;
+    }
+
+    if (checksWrap)
+    {
+      checksWrap.addEventListener('change', (e) =>
+      {
+        if (!e.target.matches('input[type="checkbox"]')) return;
+        // max 2
+        if (countChecked() > 2)
+        {
+          e.target.checked = false; noteMax.classList.remove('hidden');
+          setTimeout(() => noteMax.classList.add('hidden'), 1600);
+        }
+        // toggle "Autre"
+        if (e.target === otherBox) syncOther();
+      });
+      syncOther();
+    }
+
+    // Empêche l’envoi si 0 niche
+    function handleSubmit(e)
+    {
+      const btn = document.getElementById('submitBtn');
+      if (countChecked() === 0)
+      {
+        noteMin.classList.remove('hidden');
+        setTimeout(() => noteMin.classList.add('hidden'), 1800);
+        e.preventDefault(); return false;
+      }
+      btn.disabled = true; btn.textContent = 'Envoi…';
+      setTimeout(() =>
+      {
+        document.getElementById('sparksForm').classList.add('hidden');
+        document.getElementById('success').classList.remove('hidden');
+        window.scrollTo({ top: document.getElementById('form-card').offsetTop - 80, behavior: 'smooth' });
+      }, 900);
+      return true;
+    }
   </script>
 </body>
+
 </html>
